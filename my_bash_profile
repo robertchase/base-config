@@ -1,0 +1,7 @@
+export PATH=$HOME/bin:$PATH
+PS1="\h:\w$ "
+
+export CLICOLOR=1
+
+alias l="ls -lF"
+alias lf="ls -aF"
