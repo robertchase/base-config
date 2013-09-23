@@ -10,5 +10,6 @@
     loltop = !git lol HEAD~10..
     df = !gdf
     mt = mergetool --tool=vimdiff --no-prompt
+    hist = log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 [color]
     ui = true
