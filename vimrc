@@ -14,3 +14,11 @@ vmap <silent> ;q :s/^\(\s*\)\(.*\)\s*$/ \1 + '\2'/<CR>kk
 
 highlight DiffChange cterm=none ctermfg=black ctermbg=LightGreen 
 highlight DiffText cterm=none ctermfg=black ctermbg=LightRed
+
+function! ConditionalLoad()
+    let cwd = getcwd()
+    if filereadable(".vim.local")
+      so .vim.local
+    endif
+endfunction
+autocmd VimEnter * call ConditionalLoad()
