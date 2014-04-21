@@ -1,16 +1,14 @@
-:syntax enable
-:syntax on
-:set nu
-:set hlsearch
+" pathogen
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
 
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set expandtab
+set foldlevel=99
+let g:pymode_lint_ignore = "E501"
 
-"===[ Format visual selection for JavaScript HTML strings ]===
-" Visually select the lines to format and then press ;q to execute
-vmap <silent> ;q :s/^\(\s*\)\(.*\)\s*$/ \1 + '\2'/<CR>kk
+syntax on
+set hlsearch
 
 highlight DiffChange cterm=none ctermfg=black ctermbg=LightGreen 
 highlight DiffText cterm=none ctermfg=black ctermbg=LightRed
