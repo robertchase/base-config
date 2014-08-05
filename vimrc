@@ -5,6 +5,7 @@ call pathogen#helptags()
 filetype plugin indent on
 
 set foldlevel=99
+let g:pymode_options_max_line_length = 0
 let g:pymode_lint_ignore = "E501"
 
 syntax on
