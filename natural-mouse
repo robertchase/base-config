@@ -1,0 +1,3 @@
+# natural scrolling on ubuntu
+id=$(xinput list | grep 'Wheel Mouse' | egrep -o 'id=[[:digit:]]+' | sed 's/id=//')
+xinput set-button-map $id 1 2 3 5 4
