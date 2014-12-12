@@ -10,6 +10,7 @@ let g:pymode_lint_ignore = "E501"
 
 syntax on
 set hlsearch
+set number
 
 highlight DiffChange cterm=none ctermfg=black ctermbg=LightGreen 
 highlight DiffText cterm=none ctermfg=black ctermbg=LightRed
@@ -20,3 +21,5 @@ function! ConditionalLoad()
     endif
 endfunction
 autocmd VimEnter * call ConditionalLoad()
+
+set tabstop=4
