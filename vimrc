@@ -23,3 +23,4 @@ endfunction
 autocmd VimEnter * call ConditionalLoad()
 
 set tabstop=4
+set expandtab
