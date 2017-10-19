@@ -1,5 +1,5 @@
 [user]
-	email = git@tympanum.org
+	email = GIT-EMAIL
 	name = bob chase
 [alias]
     br = branch

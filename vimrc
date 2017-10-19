@@ -29,3 +29,5 @@ hi ColorColumn ctermbg=255
 
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufRead *.py setlocal colorcolumn=80,100
+
+set rtp+=~/.fzf
