@@ -31,3 +31,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufRead *.py setlocal colorcolumn=80,100
 
 set rtp+=~/.fzf
++:map <C-x><C-f> :FZF<Enter>
++:map <C-x><C-e> :FZF -e<Enter>
