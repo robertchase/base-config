@@ -9,4 +9,4 @@ if [ -z "$MATCH" ]; then
     echo 'no match'
     return
 fi
-echo "$MATCH" | python -m listall
+echo "$MATCH" | python -m listtok

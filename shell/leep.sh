@@ -13,7 +13,7 @@ fi
 
 COUNT=$(echo "$MATCH" | wc -l)
 if [ $COUNT -gt 1 ]; then
-    echo "$MATCH" | python -m listall | awk '{printf "[%s] %s\n", NR, $0}'
+    echo "$MATCH" | python -m listtok | awk '{printf "[%s] %s\n", NR, $0}'
     read -r line
 
     if [ -z "$line" ]; then
@@ -27,8 +27,8 @@ if [ $COUNT -gt 1 ]; then
     MATCH=$(echo "$MATCH" | head -$line | tail -1)
 fi
 
-args=$(echo "$MATCH" | python -m listargs)
-value=$(echo "$MATCH" | python -m listkwargs -k $KEY | tr -d '\n')
+args=$(echo "$MATCH" | python -m listtok)
+value=$(echo "$MATCH" | python -m listtok -k $KEY | tr -d '\n')
 if [ -z "$value" ]; then
     echo "no '$KEY' found for '$args'"
     return
