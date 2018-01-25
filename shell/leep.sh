@@ -13,7 +13,7 @@ fi
 
 COUNT=$(echo "$MATCH" | wc -l)
 if [ $COUNT -gt 1 ]; then
-    echo "$MATCH" | python -m listargs | awk '{printf "[%s] %s\n", NR, $0}'
+    echo "$MATCH" | python -m listall | awk '{printf "[%s] %s\n", NR, $0}'
     read -r line
 
     if [ -z "$line" ]; then
@@ -34,5 +34,5 @@ if [ -z "$value" ]; then
     return
 fi
 
-echo "$MATCH" | python -m listkwargs -k $KEY | tr -d '\n' | pbcopy
+echo -n "$value" | pbcopy
 echo "copied '$KEY' to clipboard for '$args'"

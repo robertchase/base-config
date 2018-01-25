@@ -9,9 +9,4 @@ if [ -z "$MATCH" ]; then
     echo 'no match'
     return
 fi
-echo "$MATCH" | while read -r line
-do
-    args=$(echo "$line" | python -m listargs)
-    kwargs=$(echo "$line" | python -m listkwargs -n)
-    echo "$args $kwargs"
-done
+echo "$MATCH" | python -m listall
