@@ -28,7 +28,7 @@ set expandtab
 hi ColorColumn ctermbg=255
 
 autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufRead *.py setlocal colorcolumn=80,100
+autocmd BufRead *.py setlocal colorcolumn=80
 
 set rtp+=~/.fzf
 :map <C-x><C-f> :FZF<Enter>
