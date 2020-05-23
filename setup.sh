@@ -2,8 +2,8 @@ BASE=$(pwd)
 pushd $HOME
 
 [ -d shell_custom ] && { echo "shell_custom directory already exists"; exit 1; }
-#[ -r .bash_profile.orig ] && { echo ".bash_profile.orig already exists"; exit 1; }
-#[ -r .vimrc.orig ] && { echo ".vimrc.orig already exists"; exit 1; }
+[ -r .bash_profile.orig ] && { echo ".bash_profile.orig already exists"; exit 1; }
+[ -r .vimrc.orig ] && { echo ".vimrc.orig already exists"; exit 1; }
 
 [ -r .bash_profile ] && mv .bash_profile .bash_profile.orig
 ln -s $BASE/custom.sh .bash_profile
@@ -11,8 +11,6 @@ mkdir shell_custom
 for filename in $BASE/custom/*.sh; do
     ln -s $filename shell_custom/
 done
-
-exit
 
 [ -r .vimrc ] && mv .vimrc .vimrc.orig
 ln -s $BASE/vimrc .vimrc

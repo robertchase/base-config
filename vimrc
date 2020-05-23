@@ -1,10 +1,17 @@
+syntax on
 set number
-set smartindent
+set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set hlsearch
-syntax on
+set ruler
+set softtabstop=4
+
+au BufRead,BufNewFile Makefile* set noexpandtab
+
+" make backspaces more powerfull
+set backspace=indent,eol,start
 
 " nicer vimdiff colors
 highlight DiffChange cterm=none ctermfg=black ctermbg=LightGreen
