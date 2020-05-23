@@ -1,35 +1,24 @@
-" pathogen
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin indent on
-
-set foldlevel=99
-"let g:pymode_options_max_line_length = 80
-let g:pymode_lint_ignore = "E501"
-
-syntax on
-set hlsearch
 set number
-
-highlight DiffChange cterm=none ctermfg=black ctermbg=LightGreen
-highlight DiffText cterm=none ctermfg=black ctermbg=LightRed
-
-function! ConditionalLoad()
-    if filereadable(".vimrc.local")
-        so .vimrc.local
-    endif
-endfunction
-autocmd VimEnter * call ConditionalLoad()
-
+set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-hi ColorColumn ctermbg=255
+set hlsearch
+syntax on
 
-autocmd BufWritePre * :%s/\s\+$//e
+" nicer vimdiff colors
+highlight DiffChange cterm=none ctermfg=black ctermbg=LightGreen
+highlight DiffText cterm=none ctermfg=black ctermbg=LightRed
+
+" vertical bar at column 80 for python
+hi ColorColumn ctermbg=255
 autocmd BufRead *.py setlocal colorcolumn=80
 
+" clean up trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" bring in FZF
 set rtp+=~/.fzf
+" key mapping: fuzzy search and exact search
 :map <C-x><C-f> :FZF<Enter>
 :map <C-x><C-e> :FZF -e<Enter>

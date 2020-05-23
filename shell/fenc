@@ -1,7 +1,0 @@
-#! /bin/sh
-
-if [ $# != 1 ]; then
-  echo "$(basename $0) file"
-  exit
-fi
-$(dirname $0)/enc "$1" $PFILE
